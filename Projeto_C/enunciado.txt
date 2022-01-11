@@ -1,0 +1,62 @@
+De forma a possibilitar que todos os seus clientes possam participar em ambos os mercados(ações e moedas digitais) o Banco HFInvestments pretende construir um programa capaz de gerir as ações e as moedas digitais de cada cliente.
+
+Após uma reunião com as entidades responsáveis concluiu-se que este sistema deverá ser capaz de relacionar os clientes com todas as suas ações/moedas compradas. A esta relação chamaremos carteira.
+
+Um cliente é identificado pelo seu nome, morada, número de contribuinte, número de identificação(CC), número de passaporte, número de cliente e IBAN.
+
+Uma ação/moeda digital deverá ser identificada por um código, descritivo e o seu valor atual.
+
+A carteira deverá ser uma relação entre um cliente e todas as suas ações/moedas, sendo que para cada uma destas deve guardar a quantidade que o cliente possui.
+
+Para efeitos de qualidade de software, a carteira deverá ter um identificador único e um descritivo.
+
+A aplicação deverá permitir um gestor de clientes criar, eliminar,editar e consultar clientes, criar, editar e consultar ações/moedas e consultar as carteiras de cada cliente.
+
+Um cliente poderá comprar, vender e consultar as suas moedas/ações.
+
+Para distinguir um cliente de um gestor de cliente a aplicação deverá ter um sistema de login, sendo que cada utilizador será identificado por username, password, tipo de login(gestor ou cliente) e, no caso de ser um cliente, deverá ter associado o número de cliente do banco.
+
+A aplicação deverá disponibilizar um dashboard onde, dependendo do tipo
+de login deverá permitir as seguintes ações:
+• Gestor cliente
+– Criar, eliminar ou editar cliente
+– Consultar clientes
+– Criar, eliminar ou editar ações/moedas
+– Consultar todas as carteiras
+– Consultar a carteira dum cliente específico
+• Cliente
+– Comprar ações/moedas
+– Vender ações/moedas
+– Consultar a sua carteira
+
+Toda esta informação deverá ser persistida em ficheiros e sempre que o
+programa seja reiniciado deverá carregar a informação contida nesses ficheiros.
+
+Em termos de avaliação, a realização dos pontos acima referidos equivale a uma nota máxima de 16 valores. Os 4 valores restantes serão avaliados pela
+aplicação de comportamentos extras. Eis alguns exemplos,
+• Permitir mais do que uma carteira por cliente
+• Atualização do valor das moedas automatizado
+• Gestão do valor que o cliente tem na conta.
+• Outros extras que façam sentido.
+Sejam criativos e organizados. A criatividade e a organização também serão avaliadas.
+
+	struct Utilizador{
+		int nCliente;
+		int tipo;	//cliente  = 0 | gestor = 1
+		int logado;
+		char username[20];
+		char password[20];
+		char nome[50];
+		char morada[50];
+		int nContribuinte;
+		int nIdentificacao;
+		int nPassaporte;
+		int IBAN;
+		struct Carteira carteira;
+	};
+
+	struct Carteira{
+		int id;
+		float valor;
+		char descritivo[50];
+	};
