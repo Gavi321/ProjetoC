@@ -19,44 +19,24 @@ Para distinguir um cliente de um gestor de cliente a aplicação deverá ter um 
 A aplicação deverá disponibilizar um dashboard onde, dependendo do tipo
 de login deverá permitir as seguintes ações:
 • Gestor cliente
-– Criar, eliminar ou editar cliente
-– Consultar clientes
-– Criar, eliminar ou editar ações/moedas
-– Consultar todas as carteiras
-– Consultar a carteira dum cliente específico
+– Criar, eliminar ou editar cliente - renato
+– Consultar clientes - renato
+– Criar, eliminar ou editar ações/moedas - joao
+– Consultar todas as carteiras - diogo
+– Consultar a carteira dum cliente específico - diogo 
 • Cliente
-– Comprar ações/moedas
-– Vender ações/moedas
-– Consultar a sua carteira
+– Comprar ações/moedas - miguel
+– Vender ações/moedas - miguel
+– Consultar a sua carteira - diogo
 
 Toda esta informação deverá ser persistida em ficheiros e sempre que o
 programa seja reiniciado deverá carregar a informação contida nesses ficheiros.
 
 Em termos de avaliação, a realização dos pontos acima referidos equivale a uma nota máxima de 16 valores. Os 4 valores restantes serão avaliados pela
 aplicação de comportamentos extras. Eis alguns exemplos,
-• Permitir mais do que uma carteira por cliente
-• Atualização do valor das moedas automatizado
-• Gestão do valor que o cliente tem na conta.
+• Permitir mais do que uma carteira por cliente joao
+• Atualização do valor das moedas automatizado - joao
+• Gestão do valor que o cliente tem na conta - diogo
 • Outros extras que façam sentido.
 Sejam criativos e organizados. A criatividade e a organização também serão avaliadas.
 
-	struct Utilizador{
-		int nCliente;
-		int tipo;	//cliente  = 0 | gestor = 1
-		int logado;
-		char username[20];
-		char password[20];
-		char nome[50];
-		char morada[50];
-		int nContribuinte;
-		int nIdentificacao;
-		int nPassaporte;
-		int IBAN;
-		struct Carteira carteira;
-	};
-
-	struct Carteira{
-		int id;
-		float valor;
-		char descritivo[50];
-	};
